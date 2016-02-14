@@ -1,6 +1,7 @@
 # Required packages
 PRODUCT_PACKAGES += \
     OmniRecord \
+    OmniStyle \
     ThemePicker \
     AOSiPOverlayStub
 
