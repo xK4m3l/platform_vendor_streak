@@ -124,3 +124,6 @@ endif
 
 # Versioning
 include vendor/streak/config/version.mk
+
+# include definitions for SDCLANG
+include vendor/streak/sdclang/sdclang.mk
