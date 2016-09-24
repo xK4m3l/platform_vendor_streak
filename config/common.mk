@@ -117,3 +117,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_PACKAGES += \
     PixelSetupWizardOverlay \
     PixelSetupWizardAodOverlay
+
+# include definitions for SDCLANG
+include vendor/streak/sdclang/sdclang.mk
