@@ -107,6 +107,9 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 # Bootanimation
 include vendor/streak/config/bootanimation.mk
 
+# Pixel sounds
+include vendor/streak/config/sounds.mk
+
 # Packages
 include vendor/streak/config/packages.mk
 
