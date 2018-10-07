@@ -73,6 +73,13 @@ PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-aosip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-aosip.xml \
     vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
 
+# Lawnchair
+ifeq ($(LAWNCHAIR_OPTOUT),)
+PRODUCT_COPY_FILES += \
+    vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
+    vendor/aosip/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
+endif
+
 # Strip the local variable table and the local variable type table to reduce
 # the size of the system image. This has no bearing on stack traces, but will
 # leave less information available via JDWP.
