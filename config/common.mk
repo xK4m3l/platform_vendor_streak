@@ -94,6 +94,10 @@ endif
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
+# Include overlays
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/aosip/packages/overlays/Common
+
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
@@ -105,6 +109,10 @@ include vendor/aosip/config/packages.mk
 
 # Versioning
 include vendor/aosip/config/version.mk
+
+# SetupWizard overlay
+PRODUCT_PACKAGES += \
+    SetupWizardOverlay
 
 # GApps
 include vendor/gapps/config.mk
