@@ -165,3 +165,6 @@ PRODUCT_PACKAGES += \
 
 # include definitions for SDCLANG
 include vendor/streak/sdclang/sdclang.mk
+
+# Fonts
+include vendor/streak/config/fonts.mk
