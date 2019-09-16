@@ -49,3 +49,14 @@ PRODUCT_PACKAGES += \
     FontGoogleSansOverlay \
     FontOnePlusSlateOverlay \
     FontSanFranciscoOverlay \
+
+# Custom Overlays
+# Settings
+PRODUCT_PACKAGES += \
+    SystemPitchBlackOverlay \
+    SystemDarkGrayOverlay \
+    SystemUIDarkGrayOverlay \
+    SystemStyleOverlay \
+    SystemUIStyleOverlay \
+    SystemNightOverlay \
+    SystemUINightOverlay
