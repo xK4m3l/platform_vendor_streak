@@ -6,6 +6,7 @@ PRODUCT_PACKAGES += \
     SoundPickerPrebuilt \
     Via \
     PixelThemesStub2019 \
+    StreakThemesStub \
     WallpaperPickerGoogle
 
 # Extra tools in Streak
