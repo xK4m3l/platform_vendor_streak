@@ -1,10 +1,14 @@
 # Required packages
 PRODUCT_PACKAGES += \
-    Gallery2 \
-    LatinIME \
-    messaging \
     ThemePicker \
     AOSiPOverlayStub
+
+ifeq ($(CURRENT_BUILD_TYPE), nogapps)
+PRODUCT_PACKAGES += \
+    Gallery2 \
+    LatinIME \
+    messaging
+endif
 
 ifeq ($(filter-out Official CI Private, $(DERP_BUILDTYPE)),)
     PRODUCT_PACKAGES += \
