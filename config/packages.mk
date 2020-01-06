@@ -8,7 +8,7 @@ PRODUCT_PACKAGES += \
 
 ifeq ($(filter-out Official CI Private, $(DERP_BUILDTYPE)),)
     PRODUCT_PACKAGES += \
-        Updater
+        OpenDelta
 endif
 
 # Extra tools in AOSiP
