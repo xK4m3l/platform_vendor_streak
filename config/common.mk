@@ -114,6 +114,11 @@ include vendor/aosip/config/packages.mk
 # Versioning
 include vendor/aosip/config/version.mk
 
+# Allows registering device to Google easier for gapps
+# Integrates package for easier Google Pay fixing
+PRODUCT_PACKAGES += \
+    sqlite3
+
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI
