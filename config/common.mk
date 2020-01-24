@@ -45,6 +45,11 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/streak/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    product_charger_res_images
+
 # Copy all Streak-specific init rc files
 $(foreach f,$(wildcard vendor/streak/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
