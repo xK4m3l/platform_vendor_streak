@@ -6,7 +6,7 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     AOSiPOverlayStub
 
-ifeq ($(CURRENT_BUILD_TYPE), nogapps)
+ifeq ($(DERP_BUILD_ZIP_TYPE), VANILLA)
 PRODUCT_PACKAGES += \
     Gallery2 \
     LatinIME \

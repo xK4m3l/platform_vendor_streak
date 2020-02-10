@@ -21,7 +21,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
 
-ifeq ($(CURRENT_BUILD_TYPE), nogapps)
+ifeq ($(DERP_BUILD_ZIP_TYPE), VANILLA)
 PRODUCT_PACKAGES += \
     libjni_latinimegoogle
 endif
@@ -138,7 +138,7 @@ PRODUCT_PACKAGES += \
     misc_writer_system \
     themed_bootanimation
 
-ifeq ($(CURRENT_BUILD_TYPE), gapps)
+ifeq ($(DERP_BUILD_ZIP_TYPE), GAPPS)
 # GApps
 include vendor/gapps/config.mk
 endif
@@ -146,7 +146,7 @@ endif
 # Pixel Style
 include vendor/pixelstyle/config.mk
 
-ifeq ($(CURRENT_BUILD_TYPE), gapps)
+ifeq ($(DERP_BUILD_ZIP_TYPE), GAPPS)
 # Customization
 include vendor/google/customization/config.mk
 endif
