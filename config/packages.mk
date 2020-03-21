@@ -40,3 +40,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
+
+# Fonts
+PRODUCT_PACKAGES += \
+    FontGoogleSansOverlay \
+    FontOnePlusSlateOverlay
