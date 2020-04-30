@@ -152,5 +152,5 @@ include vendor/pixelstyle/config.mk
 
 ifeq ($(DERP_BUILD_ZIP_TYPE), GAPPS)
 # Customization
-include vendor/google/customization/config.mk
+include vendor/google-customization/config.mk
 endif
