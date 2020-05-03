@@ -44,4 +44,5 @@ PRODUCT_PACKAGES += \
 # Fonts
 PRODUCT_PACKAGES += \
     FontGoogleSansOverlay \
-    FontOnePlusSlateOverlay
+    FontOnePlusSlateOverlay \
+    FontSanFranciscoOverlay \
