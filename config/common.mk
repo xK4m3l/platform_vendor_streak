@@ -129,11 +129,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI
 
-# PixelSetupWizard overlay
-PRODUCT_PACKAGES += \
-    PixelSetupWizardOverlay \
-    PixelSetupWizardAodOverlay
-
 # Themed bootanimation
 TARGET_MISC_BLOCK_OFFSET ?= 0
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -142,15 +137,20 @@ PRODUCT_PACKAGES += \
     misc_writer_system \
     themed_bootanimation
 
-ifeq ($(DERP_BUILD_ZIP_TYPE), GAPPS)
-# GApps
-include vendor/gapps/config.mk
-endif
-
 # Pixel Style
 include vendor/pixelstyle/config.mk
 
 ifeq ($(DERP_BUILD_ZIP_TYPE), GAPPS)
+
 # Customization
 include vendor/google-customization/config.mk
+
+# GApps
+include vendor/gapps/config.mk
+
+# PixelSetupWizard overlay
+PRODUCT_PACKAGES += \
+    PixelSetupWizardOverlay \
+    PixelSetupWizardAodOverlay
+
 endif

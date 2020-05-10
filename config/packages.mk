@@ -1,9 +1,8 @@
 # Required packages
 PRODUCT_PACKAGES += \
-		MatLog \
+    MatLog \
     OmniRecord \
     OmniStyle \
-    PixelLiveWallpaperPrebuilt \
     ThemePicker \
     AOSiPOverlayStub
 
@@ -17,6 +16,11 @@ endif
 ifeq ($(filter-out Official CI Private, $(DERP_BUILDTYPE)),)
     PRODUCT_PACKAGES += \
         OpenDelta
+endif
+
+ifeq ($(DERP_BUILD_ZIP_TYPE), GAPPS)
+PRODUCT_PACKAGES += \
+    PixelLiveWallpaperPrebuilt
 endif
 
 # Extra tools in AOSiP
