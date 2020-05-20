@@ -75,6 +75,10 @@ PRODUCT_COPY_FILES += \
     vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml \
     vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-streak.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-streak.xml
 
+# Backup Services whitelist
+PRODUCT_COPY_FILES += \
+    vendor/streak/prebuilt/common/etc/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
+
 # Android Beam
 PRODUCT_COPY_FILES += \
     vendor/streak/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
