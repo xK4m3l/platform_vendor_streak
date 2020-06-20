@@ -64,3 +64,7 @@ PRODUCT_PACKAGES += \
     SystemUIStyleOverlay \
     SystemNightOverlay \
     SystemUINightOverlay
+
+# Google icons mess
+PRODUCT_PACKAGES += \
+    wellbeingconf
