@@ -1,7 +1,6 @@
 # Required packages
 PRODUCT_PACKAGES += \
     MatLog \
-    OmniRecord \
     OmniStyle \
     ThemePicker \
     AOSiPOverlayStub
