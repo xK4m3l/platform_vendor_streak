@@ -4,7 +4,8 @@ PRODUCT_PACKAGES += \
     Clock \
     Gallery \
     SoundPickerPrebuilt \
-    Via
+    Via \
+    PixelThemesStub2019
 
 # Extra tools in Streak
 PRODUCT_PACKAGES += \
