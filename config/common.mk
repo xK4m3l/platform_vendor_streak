@@ -38,6 +38,16 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/streak/prebuilt/common/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
+ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
+PRODUCT_PACKAGES += \
+    FaceUnlockService
+TARGET_FACE_UNLOCK_SUPPORTED := true
+endif
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/streak/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
