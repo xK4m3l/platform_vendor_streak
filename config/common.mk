@@ -51,6 +51,15 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 # Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
 
+# Prebuilt Packages
+PRODUCT_PACKAGES += \
+    Lawnchair
+
+# Lawnchair
+PRODUCT_COPY_FILES += \
+    vendor/streak/config/permissions/privapp-permissions-lawnchair.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lawnchair.xml \
+    vendor/streak/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
+
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=enforce
