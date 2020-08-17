@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= Magma
+PRODUCT_BRAND ?= Streak
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -24,20 +24,20 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/magma/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/magma/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/magma/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh
+    vendor/streak/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/streak/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/streak/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh
 
 ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_COPY_FILES += \
-    vendor/magma/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/magma/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/magma/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/streak/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/streak/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/streak/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
 # Common overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/magma/overlay/common
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/magma/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/streak/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/streak/overlay/common
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
@@ -57,9 +57,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    vendor/magma/config/permissions/magma-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/magma-power-whitelist.xml \
-    vendor/magma/config/permissions/privapp-permissions-magma-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-magma.xml \
-    vendor/magma/config/permissions/privapp-permissions-magma-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-magma.xml
+    vendor/streak/config/permissions/streak-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/streak-power-whitelist.xml \
+    vendor/streak/config/permissions/privapp-permissions-streak-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-streak.xml \
+    vendor/streak/config/permissions/privapp-permissions-streak-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-streak.xml
 
 # Set custom volume steps
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -91,7 +91,7 @@ PRODUCT_PACKAGES += \
     bootanimation.zip
 
 # Packages
-include vendor/magma/config/packages.mk
+include vendor/streak/config/packages.mk
 
 # Versioning
-include vendor/magma/config/version.mk
+include vendor/streak/config/version.mk

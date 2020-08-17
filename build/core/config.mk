@@ -13,4 +13,4 @@
 # limitations under the License.
 
 # Rules for QCOM targets
-include $(TOPDIR)vendor/magma/build/core/qcom_target.mk
+include $(TOPDIR)vendor/streak/build/core/qcom_target.mk
