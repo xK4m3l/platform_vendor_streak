@@ -57,7 +57,7 @@ PRODUCT_PACKAGES += \
 
 # Lawnchair
 PRODUCT_COPY_FILES += \
-    vendor/streak/config/permissions/privapp-permissions-lawnchair.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lawnchair.xml \
+    vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lawnchair.xml \
     vendor/streak/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
 
 # Enforce privapp-permissions whitelist
@@ -71,9 +71,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     vendor/streak/config/permissions/streak-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/streak-power-whitelist.xml \
-    vendor/streak/config/permissions/privapp-permissions-streak-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-streak.xml \
-    vendor/streak/config/permissions/privapp-permissions-streak-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-streak.xml \
-    vendor/streak/config/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
+    vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-streak-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-streak.xml \
+    vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-streak-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-streak.xml \
+    vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
 
 # Set custom volume steps
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
