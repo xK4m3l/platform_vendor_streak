@@ -71,12 +71,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     vendor/streak/config/permissions/streak-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/streak-power-whitelist.xml \
-    vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-streak-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-streak.xml \
     vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-streak-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-streak.xml \
-    vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
-
-# Permissions
-PRODUCT_COPY_FILES += \
+    vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml \
     vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-streak.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-streak.xml
 
 # Set custom volume steps

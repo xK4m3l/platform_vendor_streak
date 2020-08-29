@@ -14,7 +14,16 @@
      limitations under the License.
 -->
 <permissions>
+    <privapp-permissions package="com.android.apps.tag">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+
     <privapp-permissions package="com.android.phone">
         <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="android.ext.services">
+        <permission name="android.permission.PROVIDE_RESOLVER_RANKER_SERVICE"/>
     </privapp-permissions>
 </permissions>
