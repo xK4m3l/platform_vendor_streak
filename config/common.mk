@@ -75,6 +75,10 @@ PRODUCT_COPY_FILES += \
     vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-streak-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-streak.xml \
     vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
 
+# Permissions
+PRODUCT_COPY_FILES += \
+    vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-streak.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-streak.xml
+
 # Set custom volume steps
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.config.media_vol_steps=30 \
