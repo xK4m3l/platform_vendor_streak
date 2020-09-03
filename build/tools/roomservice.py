@@ -31,11 +31,11 @@ import urllib.request
 DEBUG = False
 default_manifest = ".repo/manifest.xml"
 
-custom_local_manifest = ".repo/local_manifests/magma_manifest.xml"
+custom_local_manifest = ".repo/local_manifests/streak_manifest.xml"
 custom_default_revision = "ten"
-custom_dependencies = "magma.dependencies"
+custom_dependencies = "streak.dependencies"
 org_manifest = "devices"  # leave empty if org is provided in manifest
-org_display = "MagmaDevices"  # needed for displaying
+org_display = "ProjectStreak-Devices"  # needed for displaying
 
 github_auth = None
 
