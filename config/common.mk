@@ -110,5 +110,17 @@ include vendor/streak/config/bootanimation.mk
 # Packages
 include vendor/streak/config/packages.mk
 
+# Face Unlock
+ifeq ($(STREAK_BUILD_TYPE), OFFICIAL)
+TARGET_FACE_UNLOCK_SUPPORTED := false
+ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
+PRODUCT_PACKAGES += \
+    FaceUnlockService
+TARGET_FACE_UNLOCK_SUPPORTED := true
+endif
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
+endif
+
 # Versioning
 include vendor/streak/config/version.mk
