@@ -1,4 +1,5 @@
-# Custom Magma packages
+# Custom packages
 PRODUCT_PACKAGES += \
-    FDroid \
-    ThemePicker
+    Clock \
+    Gallery \
+    Via
