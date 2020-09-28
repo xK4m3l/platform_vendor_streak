@@ -95,9 +95,9 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # We modify several neverallows, so let the build proceed
-#ifneq ($(TARGET_BUILD_VARIANT),user)
-#    SELINUX_IGNORE_NEVERALLOWS := true
-#endif
+ifneq ($(TARGET_BUILD_VARIANT),user)
+    SELINUX_IGNORE_NEVERALLOWS := true
+endif
 
 # Bootanimation
 include vendor/streak/config/bootanimation.mk
