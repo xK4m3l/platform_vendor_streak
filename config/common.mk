@@ -148,3 +148,6 @@ include vendor/streak/sdclang/sdclang.mk
 
 # Fonts
 include vendor/streak/config/fonts.mk
+
+# Overlays
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/streak/overlay
