@@ -1,12 +1,13 @@
 # Required packages
 PRODUCT_PACKAGES += \
-    ThemePicker \
     Clock \
     Gallery \
-    SoundPickerPrebuilt \
-    Via \
+    MatchmakerPrebuilt \
     PixelThemesStub2019 \
     StreakThemesStub \
+    SoundPickerPrebuilt \
+    ThemePicker \
+    Via \
     WallpaperPickerGoogle
 
 # Extra tools in Streak
