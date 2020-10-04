@@ -207,6 +207,8 @@ ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
     ifeq ($(KERNEL_LD),)
         KERNEL_LD :=
     endif
+    # ThinLTO cache path for kernel
+    KERNEL_CC += KERNEL_THINLTO_CACHE_PATH="$(BUILD_TOP)/$(TARGET_OUT_INTERMEDIATES)/KERNEL_THINLTO-CACHE"
 endif
 
 ifneq ($(TARGET_KERNEL_MODULES),)
