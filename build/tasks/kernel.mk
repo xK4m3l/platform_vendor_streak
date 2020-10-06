@@ -181,7 +181,7 @@ ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
     ifneq ($(TARGET_KERNEL_CLANG_VERSION),)
         ifeq ($(TARGET_KERNEL_CLANG_VERSION),latest)
             # Set the latest version of clang
-            KERNEL_CLANG_VERSION := $(shell ls -d $(BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/clang-r* | xargs -n 1 basename | tail -1)
+            KERNEL_CLANG_VERSION := $(shell ls -d $(BUILD_TOP)/prebuilts/clang/host/$(HOST_PREBUILT_TAG)/clang-r* | xargs -n 1 basename | tail -1)
         else
             # Find the clang-* directory containing the specified version
             KERNEL_CLANG_VERSION := clang-$(TARGET_KERNEL_CLANG_VERSION)
@@ -190,7 +190,7 @@ ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
         # Use the default version of clang if TARGET_KERNEL_CLANG_VERSION hasn't been set by the device config
         KERNEL_CLANG_VERSION := $(LLVM_PREBUILTS_VERSION)
     endif
-    TARGET_KERNEL_CLANG_PATH ?= $(BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/$(KERNEL_CLANG_VERSION)
+    TARGET_KERNEL_CLANG_PATH ?= $(BUILD_TOP)/prebuilts/clang/host/$(HOST_PREBUILT_TAG)/$(KERNEL_CLANG_VERSION)
     KBUILD_COMPILER_STRING := $(shell $(TARGET_KERNEL_CLANG_PATH)/bin/clang --version | head -n 1 | \
 	    $(BUILD_TOP)/prebuilts/tools-lineage/$(HOST_OS)-x86/bin/perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')
     KERNEL_MAKE_FLAGS += KBUILD_COMPILER_STRING="$(KBUILD_COMPILER_STRING)"
