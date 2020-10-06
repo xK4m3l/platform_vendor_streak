@@ -82,6 +82,11 @@ PRODUCT_COPY_FILES += \
     vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-streak.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-streak.xml \
     vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
 
+# Blur properties
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sf.blurs_are_expensive=1 \
+    ro.surface_flinger.supports_background_blur=1
+
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
     vendor/streak/prebuilt/common/etc/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
