@@ -12,10 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, build/target/product/aosp_x86.mk)
+$(call inherit-product, build/target/product/aosp_arm64.mk)
 
-include vendor/aosip/build/target/product/derp_generic_target.mk
+include vendor/streak/build/target/product/streak_generic_target.mk
 
-TARGET_USES_64_BIT_BINDER := true
-
-PRODUCT_NAME := derp_x86
+PRODUCT_NAME := streak_arm64

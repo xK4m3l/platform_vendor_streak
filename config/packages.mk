@@ -1,28 +1,9 @@
 # Required packages
 PRODUCT_PACKAGES += \
-    MatLog \
-    OmniStyle \
     ThemePicker \
-    AOSiPOverlayStub
+    StreakOverlayStub
 
-ifeq ($(DERP_BUILD_ZIP_TYPE), VANILLA)
-PRODUCT_PACKAGES += \
-    Gallery2 \
-    LatinIME \
-    messaging
-endif
-
-ifeq ($(filter-out Official CI Private, $(DERP_BUILDTYPE)),)
-    PRODUCT_PACKAGES += \
-        OpenDelta
-endif
-
-ifneq ($(DERP_BUILD_ZIP_TYPE), VANILLA)
-PRODUCT_PACKAGES += \
-    PixelLiveWallpaperPrebuilt
-endif
-
-# Extra tools in AOSiP
+# Extra tools in Streak
 PRODUCT_PACKAGES += \
     7z \
     awk \
@@ -56,8 +37,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
-
-# Cutout control overlays
-PRODUCT_PACKAGES += \
-    HideCutout \
-    StatusBarStock

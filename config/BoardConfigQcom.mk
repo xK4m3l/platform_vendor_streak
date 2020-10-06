@@ -1,4 +1,4 @@
-include vendor/aosip/config/BoardConfigQcomDefs.mk
+include vendor/streak/config/BoardConfigQcomDefs.mk
 
 BOARD_USES_ADRENO := true
 

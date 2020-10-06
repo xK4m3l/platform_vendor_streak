@@ -1,10 +1,10 @@
-include vendor/aosip/config/BoardConfigKernel.mk
+include vendor/streak/config/BoardConfigKernel.mk
 
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
-include vendor/aosip/config/BoardConfigQcom.mk
+include vendor/streak/config/BoardConfigQcom.mk
 endif
 
-include vendor/aosip/config/BoardConfigSoong.mk
+include vendor/streak/config/BoardConfigSoong.mk
 
 ifneq ($(TARGET_USES_PREBUILT_CAMERA_SERVICE), true)
 PRODUCT_SOONG_NAMESPACES += \

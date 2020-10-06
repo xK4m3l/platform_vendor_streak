@@ -151,12 +151,12 @@ def fetch_query(remote_url, query):
         raise Exception('Gerrit URL should be in the form http[s]://hostname/ or ssh://[user@]host[:port]')
 
 if __name__ == '__main__':
-    # Default to AOSiP Gerrit
-    default_gerrit = 'https://review.aosiprom.com'
+    # Default to Streak Gerrit
+    default_gerrit = 'https://gerrit.projectstreak.xyz'
 
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
         repopick.py is a utility to simplify the process of cherry picking
-        patches from AOSiP's Gerrit instance (or any gerrit instance of your choosing)
+        patches from Streak's Gerrit instance (or any gerrit instance of your choosing)
 
         Given a list of change numbers, repopick will cd into the project path
         and cherry pick the latest patch available.
@@ -455,9 +455,9 @@ if __name__ == '__main__':
                 print('Trying to fetch the change from GitHub')
 
             if args.pull:
-                cmd = ['git pull --no-edit aosip', item['fetch'][method]['ref']]
+                cmd = ['git pull --no-edit streak', item['fetch'][method]['ref']]
             else:
-                cmd = ['git fetch aosip', item['fetch'][method]['ref']]
+                cmd = ['git fetch streak', item['fetch'][method]['ref']]
             if args.quiet:
                 cmd.append('--quiet')
             else:

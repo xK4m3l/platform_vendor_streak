@@ -23,12 +23,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # SI
 PRODUCT_PACKAGES += \
-	SettingsIntelligence
-
-ifeq ($(DERP_BUILD_ZIP_TYPE), VANILLA)
-PRODUCT_PACKAGES += \
+    SettingsIntelligence \
     libjni_latinimegoogle
-endif
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -38,18 +34,22 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
+# Bootanimation
+PRODUCT_COPY_FILES += \
+    vendor/streak/prebuilt/common/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/aosip/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aosip/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh \
-    vendor/aosip/prebuilt/common/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist
+    vendor/streak/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/streak/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/streak/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh \
+    vendor/streak/prebuilt/common/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist
 
 ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/aosip/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/aosip/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/streak/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/streak/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/streak/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
 # Offline charger
@@ -59,12 +59,11 @@ PRODUCT_PACKAGES += \
 
 # Configs
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/sysconfig/aosip-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/aosip-power-whitelist.xml \
-    vendor/aosip/prebuilt/common/etc/sysconfig/dialer_experience.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/dialer_experience.xml \
-    vendor/aosip/prebuilt/common/etc/sysconfig/turbo.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/turbo.xml
+    vendor/streak/prebuilt/common/etc/sysconfig/streak-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/streak-power-whitelist.xml \
+    vendor/streak/prebuilt/common/etc/sysconfig/dialer_experience.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/dialer_experience.xml \
 
-# Copy all AOSiP-specific init rc files
-$(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
+# Copy all Streak-specific init rc files
+$(foreach f,$(wildcard vendor/streak/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Don't compile SystemUITests
@@ -75,29 +74,13 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-aosip-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-aosip.xml \
-    vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-aosip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-aosip.xml \
-    vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
-
-# Lawnchair
-ifeq ($(LAWNCHAIR_OPTOUT),)
-PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
-    vendor/aosip/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
-endif
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.boot.vendor.overlay.theme=com.potato.overlay.lawnconf
-
-# Lawnchair Default Configuration
-ifeq ($(LAWNCHAIR_OPTOUT),)
-PRODUCT_PACKAGES += \
-    LawnConf
-endif
+    vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-streak-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-streak.xml \
+    vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-streak.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-streak.xml \
+    vendor/streak/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+    vendor/streak/prebuilt/common/etc/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
 
 # Strip the local variable table and the local variable type table to reduce
 # the size of the system image. This has no bearing on stack traces, but will
@@ -106,19 +89,16 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Include overlays
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/aosip/packages/overlays/Common
+    vendor/streak/packages/overlays/Common
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
-# Overlays
-include vendor/overlay/overlays.mk
-
 # Packages
-include vendor/aosip/config/packages.mk
+include vendor/streak/config/packages.mk
 
 # Versioning
-include vendor/aosip/config/version.mk
+include vendor/streak/config/version.mk
 
 # Allows registering device to Google easier for gapps
 # Integrates package for easier Google Pay fixing
@@ -129,28 +109,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI
 
-# Themed bootanimation
-TARGET_MISC_BLOCK_OFFSET ?= 0
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.misc.block.offset=$(TARGET_MISC_BLOCK_OFFSET)
-PRODUCT_PACKAGES += \
-    misc_writer_system \
-    themed_bootanimation
-
-# Pixel Style
-include vendor/pixelstyle/config.mk
-
-ifeq ($(DERP_BUILD_ZIP_TYPE), GAPPS)
-
-# Customization
-include vendor/google-customization/config.mk
-
-# GApps
-include vendor/gapps/config.mk
-
 # PixelSetupWizard overlay
 PRODUCT_PACKAGES += \
     PixelSetupWizardOverlay \
     PixelSetupWizardAodOverlay
-
-endif

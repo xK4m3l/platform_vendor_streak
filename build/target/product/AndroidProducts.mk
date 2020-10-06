@@ -15,13 +15,13 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_arm.mk \
-    $(LOCAL_DIR)/derp_arm64.mk \
-    $(LOCAL_DIR)/derp_x86.mk \
-    $(LOCAL_DIR)/derp_x86_64.mk
+    $(LOCAL_DIR)/streak_arm.mk \
+    $(LOCAL_DIR)/streak_arm64.mk \
+    $(LOCAL_DIR)/streak_x86.mk \
+    $(LOCAL_DIR)/streak_x86_64.mk
 
 COMMON_LUNCH_CHOICES := \
-    derp_arm-userdebug \
-    derp_arm64-userdebug \
-    derp_x86-userdebug \
-    derp_x86_64-userdebug
+    streak_arm-userdebug \
+    streak_arm64-userdebug \
+    streak_x86-userdebug \
+    streak_x86_64-userdebug
