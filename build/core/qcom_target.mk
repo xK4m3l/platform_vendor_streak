@@ -22,11 +22,4 @@ $(call set-device-specific-path,THERMAL,thermal,hardware/qcom-caf/thermal)
 $(call set-device-specific-path,VR,vr,hardware/qcom-caf/vr)
 $(call set-device-specific-path,WLAN,wlan,hardware/qcom-caf/wlan)
 
-else
-
-ifneq ($(FORCE_QCOM_DISPLAY_HAL_VARIANT),)
-$(call set-device-specific-path,DISPLAY,display,hardware/qcom-caf/$(FORCE_QCOM_DISPLAY_HAL_VARIANT)/display)
 endif
-
-endif
-
