@@ -1,7 +1,6 @@
 # Required packages
 PRODUCT_PACKAGES += \
     ThemePicker \
-    StreakOverlayStub \
     Clock \
     GalleryGo \
     Via

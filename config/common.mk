@@ -96,12 +96,14 @@ PRODUCT_COPY_FILES += \
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
-# Include overlays
-PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/streak/packages/overlays/Common
+# Common overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/streak/overlay/common
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
+
+# Pixel sounds
+include vendor/streak/config/sounds.mk
 
 # Packages
 include vendor/streak/config/packages.mk
