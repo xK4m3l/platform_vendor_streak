@@ -3,6 +3,7 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     Clock \
     GalleryGo \
+    SoundPickerPrebuilt \
     Via
 
 # Extra tools in Streak
