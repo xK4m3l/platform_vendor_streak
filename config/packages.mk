@@ -2,7 +2,7 @@
 PRODUCT_PACKAGES += \
     ThemePicker \
     Clock \
-    GalleryGo \
+    Gallery \
     SoundPickerPrebuilt \
     Via
 
