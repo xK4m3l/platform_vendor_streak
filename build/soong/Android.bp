@@ -1,12 +1,4 @@
 bootstrap_go_package {
-    name: "soong-streak",
-    pkgPath: "streak/soong/android",
-    srcs: [
-        "android/variable.go",
-    ],
-}
-
-bootstrap_go_package {
     name: "soong-streak-generator",
     pkgPath: "streak/soong/generator",
     deps: [
