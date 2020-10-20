@@ -148,7 +148,8 @@ PRODUCT_COPY_FILES += \
 # Navbar
 PRODUCT_PACKAGES += \
     GesturalNavigationOverlayLong \
-    GesturalNavigationOverlayMedium
+    GesturalNavigationOverlayMedium \
+    GesturalNavigationOverlayHidden
 
 # include definitions for SDCLANG
 include vendor/streak/sdclang/sdclang.mk
