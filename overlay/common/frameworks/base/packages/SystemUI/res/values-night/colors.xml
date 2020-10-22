@@ -18,4 +18,5 @@
   -->
 <resources>
     <color name="biometric_dialog_accent">#ff8ab4f8</color>
+    <color name="notification_material_background_dimmed_color">#252527</color>
 </resources>
