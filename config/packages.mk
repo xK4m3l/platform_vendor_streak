@@ -50,6 +50,9 @@ PRODUCT_PACKAGES += \
     FontGoogleSansOverlay \
     FontOnePlusSlateOverlay \
     FontSanFranciscoOverlay \
+    FontInterOverlay \
+    FontBarlowOverlay \
+    FontLinotteOverlay
 
 # Custom Overlays
 # Settings
