@@ -148,6 +148,3 @@ include vendor/streak/sdclang/sdclang.mk
 
 # Fonts
 include vendor/streak/config/fonts.mk
-
-# Themes
-$(call inherit-product, vendor/themes/common.mk)
