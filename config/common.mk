@@ -38,6 +38,17 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/streak/prebuilt/common/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 
+# Gapps
+ifeq ($(TARGET_BUILD_GAPPS),true)
+    $(call inherit-product, vendor/google/gms/config.mk)
+    $(call inherit-product, vendor/google/pixel/config.mk)
+endif
+
+# Apex
+ifeq ($(TARGET_SUPPORTS_UPDATABLE_APEX),true)
+    $(call inherit-product, vendor/prebuilts/config/apex.mk)
+endif
+
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED := true
 ifeq ($(STREAK_BUILD_TYPE), OFFICIAL)
