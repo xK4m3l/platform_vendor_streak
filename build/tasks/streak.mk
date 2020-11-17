@@ -39,4 +39,5 @@ streak: otapackage
 	@echo -e ${CL_RST}""${CL_RST}
 	@echo -e ${CL_CYN}"======================================================================================="${CL_CYN}
 	@echo -e ${CL_RST}""Package Complete: "$(STREAK_TARGET_PACKAGE)"${CL_RST}
+	@echo -e ${CL_RST}""Size:" `du -sh $(STREAK_TARGET_PACKAGE) | awk '{print $$1}' `"${CL_RST}
 	@echo -e ${CL_CYN}"======================================================================================="${CL_CYN}
