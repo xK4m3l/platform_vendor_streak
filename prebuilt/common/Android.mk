@@ -64,18 +64,6 @@ LOCAL_DEX_PREOPT := false
 LOCAL_PRODUCT_MODULE := true
 include $(BUILD_PREBUILT)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE        := MatchmakerPrebuilt
-LOCAL_SRC_FILES     := priv-app/$(LOCAL_MODULE).apk
-LOCAL_MODULE_TAGS   := optional
-LOCAL_MODULE_CLASS  := APPS
-LOCAL_CERTIFICATE   := PRESIGNED
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_DEX_PREOPT    := false
-LOCAL_PRODUCT_MODULE := true
-LOCAL_PRIVILEGED_MODULE := true
-include $(BUILD_PREBUILT)
-
 ifeq ($(TARGET_USES_AOSP_APNS_CONF),)
 ################################
 # Copies the APN list file into $(TARGET_COPY_OUT_PRODUCT)/etc for the product as apns-conf.xml.
