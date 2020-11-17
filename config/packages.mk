@@ -7,7 +7,6 @@ PRODUCT_PACKAGES += \
     Via \
     PixelThemesStub2019 \
     StreakThemesStub \
-    WallpaperPickerGoogle \
     QuickAccessWallet
 
 # Extra tools in Streak
