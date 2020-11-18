@@ -84,6 +84,9 @@ include vendor/streak/config/streak_audio.mk
 # Include ProjectStreak branding
 include vendor/streak/config/branding.mk
 
+# Include Bootanimation
+include vendor/streak/config/bootanimation.mk
+
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
