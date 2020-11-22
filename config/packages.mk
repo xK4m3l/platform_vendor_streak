@@ -2,12 +2,16 @@
 PRODUCT_PACKAGES += \
     ThemePicker \
     Clock \
-    Gallery \
     SoundPickerPrebuilt \
-    Via \
     PixelThemesStub2019 \
     StreakThemesStub \
     QuickAccessWallet
+
+ifneq ($(TARGET_BUILD_GAPPS),)
+PRODUCT_PACKAGES += \
+    Gallery \
+    Via
+endif
 
 # Extra tools in Streak
 PRODUCT_PACKAGES += \
