@@ -7,8 +7,8 @@ endif
 TARGET_PRODUCT_SHORT := $(subst streak_,,$(STREAK_BUILD_TYPE))
 
 # Set all versions
-STREAK_VERSION_BASE := 1.0
-STREAK_CODENAME := Hummingbird
+STREAK_VERSION_BASE := 1.1
+STREAK_CODENAME := Cardinal
 
 CURRENT_DEVICE=$(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
 BUILD_DATE := $(shell date -u +%d%m%Y)
