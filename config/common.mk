@@ -54,11 +54,6 @@ PRODUCT_PACKAGES += \
 $(foreach f,$(wildcard vendor/streak/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
-# Default notification/alarm sounds
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.notification_sound=Argon.ogg \
-    ro.config.alarm_alert=Hassium.ogg
-
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
     vendor/streak/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
@@ -75,17 +70,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=log
 
-# Include AOSP audio files
-include vendor/streak/config/aosp_audio.mk
-
-# Include ProjectStreak audio files
-include vendor/streak/config/streak_audio.mk
-
 # Include ProjectStreak branding
 include vendor/streak/config/branding.mk
 
 # Include Bootanimation
 include vendor/streak/config/bootanimation.mk
+
+# Include Pixel Sounds
+include vendor/google/sounds/sounds-vendor.mk
 
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
