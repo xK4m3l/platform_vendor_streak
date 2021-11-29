@@ -76,6 +76,9 @@ include vendor/streak/config/branding.mk
 # Include Bootanimation
 include vendor/streak/config/bootanimation.mk
 
+# Include GApps
+include vendor/gapps/common/common-vendor.mk
+
 # Include Pixel Sounds
 include vendor/google/sounds/sounds-vendor.mk
 
