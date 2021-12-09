@@ -82,6 +82,9 @@ include vendor/gapps/common/common-vendor.mk
 # Include Pixel Sounds
 include vendor/google/sounds/sounds-vendor.mk
 
+# Include Themes
+include vendor/themes/common.mk
+
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
