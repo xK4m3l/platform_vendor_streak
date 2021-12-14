@@ -45,11 +45,6 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/streak/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    product_charger_res_images
-
 # Copy all Streak-specific init rc files
 $(foreach f,$(wildcard vendor/streak/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
@@ -69,6 +64,9 @@ PRODUCT_COPY_FILES += \
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=log
+
+# Include packages
+include vendor/streak/config/packages.mk
 
 # Include ProjectStreak branding
 include vendor/streak/config/branding.mk
@@ -100,42 +98,6 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
-# ProjectStreak packages
-PRODUCT_PACKAGES += \
-    Updater \
-    ThemePicker
-
-# Extra tools
-PRODUCT_PACKAGES += \
-    7z \
-    bash \
-    curl \
-    getcap \
-    htop \
-    lib7z \
-    libsepol \
-    nano \
-    pigz \
-    setcap \
-    unrar \
-    vim \
-    wget \
-    zip
-
-# Openssh
-PRODUCT_PACKAGES += \
-    scp \
-    sftp \
-    ssh \
-    sshd \
-    sshd_config \
-    ssh-keygen \
-    start-ssh
-
-# rsync
-PRODUCT_PACKAGES += \
-    rsync
-
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true
@@ -143,10 +105,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # These packages are excluded from user builds
 PRODUCT_PACKAGES_DEBUG += \
     procmem
-
-# Root
-PRODUCT_PACKAGES += \
-    adb_root
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
